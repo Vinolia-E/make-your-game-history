@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    will-change: transform;
+}
