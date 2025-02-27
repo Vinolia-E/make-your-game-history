@@ -45,7 +45,8 @@ cd make-your-game
 ```
 3. Open `tetris.html `
 
-4. Press `Go Live` (from the bottom of your screen) and go in a browser to start playing.
+4. To access the game, install/download ``Live Server`` extension if you do not have it installed in your machine, then:
+  * Press `Go Live` (from the bottom of your screen) and go in the browser to start playing.
 
 ### Technologies Used
 * HTML for rendering the game board.
@@ -53,7 +54,6 @@ cd make-your-game
 * CSS for styling.
 
 ### Future Enhancements
-* Implement different difficulty levels.
 * Add a leaderboard for high scores.
 * Introduce sound effects and animations.
 
