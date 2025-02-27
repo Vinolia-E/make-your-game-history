@@ -12,3 +12,138 @@ body {
     height: 100vh;
     will-change: transform;
 }
+  
+.game-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+  
+#game-container {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    border: 2px solid #fff;
+    background: #222;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    contain: strict; 
+    perspective: 1000px; 
+    transform: translateZ(0);
+    will-change: transform;
+    isolation: isolate;
+}
+  
+.block {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    outline: 1px solid rgba(0, 0, 0, 0.8);
+    transform: translateZ(0); 
+    backface-visibility: hidden; 
+    will-change: transform; 
+    contain: layout; 
+    transition: transform 60ms linear;
+}
+  
+#info-panel {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    contain: content;
+}
+  
+.info-section {
+    margin-bottom: 25px;
+}
+  
+.info-label, .controls-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+  
+.info-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    min-height: 1.2em;
+    display: inline-block;
+}
+  
+#pause-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+    min-width: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    will-change: opacity, transform;
+    z-index: 10;
+}
+  
+.menu-button {
+    margin: 10px;
+    padding: 12px 24px;
+    background: #444;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+    will-change: transform, background-color;
+}
+  
+.menu-button:hover {
+    background: #666;
+    transform: translateY(-1px);
+}
+  
+.game-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: translateZ(0);
+}
+  
+.controls-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+  
+.control-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ccc;
+}
+  
+@keyframes blockFall {
+    from { transform: translateY(0) translateZ(0); }
+    to { transform: translateY(28px) translateZ(0); }
+}
+  
+@media (prefers-reduced-motion: reduce) {
+    .block, .menu-button {
+      transition: none;
+    }
+}
