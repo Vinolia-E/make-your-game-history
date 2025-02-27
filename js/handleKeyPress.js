@@ -1,7 +1,7 @@
 // Processes keyboard input to control piece movement and game state.
 // Ignores most inputs if the game is paused or over.
 function handleKeyPress(event) {
-    if ((isPaused || isGameOver) && event.key !== ' ') {
+    if ((isPaused || isGameOver) && event.key !== ' ' && event.key.toLowerCase() !== 'r') {
         return;
     }
     if (event.key === 'ArrowLeft') {
@@ -14,6 +14,8 @@ function handleKeyPress(event) {
         rotatePiece(); 
     } else if (event.key === ' ' && !isGameOver) {
         togglePause(); 
+    } else if (event.key.toLowerCase() === 'r') {
+        restart();
     }
 }
 

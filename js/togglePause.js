@@ -12,6 +12,3 @@ function togglePause() {
 
 document.getElementById('continue').addEventListener('click', togglePause);
 document.getElementById('restart').addEventListener('click', restart);
-
-// Starts the game
-init();

@@ -19,3 +19,6 @@ const scoreElement = document.getElementById('score');
 const timerElement = document.getElementById('timer');
 const livesElement = document.getElementById('lives');
 const pauseMenu = document.getElementById('pause-menu');
+
+// Starts the game
+init();

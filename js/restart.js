@@ -7,6 +7,12 @@ function restart() {
             pauseMenu.removeChild(child);
         }
     });
+    
+    const continueButton = document.getElementById('continue');
+    if (continueButton) {
+        continueButton.style.display = 'block';
+    }
+    
     init(); 
     pauseMenu.style.display = 'none'; 
 }
