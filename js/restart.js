@@ -7,6 +7,15 @@ function restart() {
             pauseMenu.removeChild(child);
         }
     });
+    
+    const continueButton = document.getElementById('continue');
+    if (continueButton) {
+        continueButton.style.display = 'block';
+    }
+    
+    totalPausedTime = 0;
+    pauseStartTime = 0;
+    
     init(); 
     pauseMenu.style.display = 'none'; 
 }

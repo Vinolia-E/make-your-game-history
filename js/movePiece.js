@@ -1,5 +1,7 @@
 // Attempts to move the current piece by the specified x and y offsets.
 // Handles collisions, merging, line clearing, and new piece creation.
+let lastSpeedIncreaseScore = 0;
+
 function movePiece(dx, dy) {
     if (isGameOver) return; 
     currentPiece.x += dx;
@@ -12,7 +14,15 @@ function movePiece(dx, dy) {
             let linesCleared = checkLines(); 
             if (linesCleared > 0) {
                 let scoreValues = [100, 300, 500, 800];
-                score += scoreValues[linesCleared - 1];
+                let newPoints = scoreValues[linesCleared - 1];
+                score += newPoints;
+                
+                // Check if we've crossed a 500-point threshold
+                if (Math.floor(score / 500) > Math.floor(lastSpeedIncreaseScore / 500)) {
+                    increaseSpeed();
+                }
+                
+                lastSpeedIncreaseScore = score;
             }
             currentPiece = createPiece();
             if (collide()) {
