@@ -24,3 +24,41 @@
 * `Up Arrow` ``(↑)`` Rotate piece.
 * `Spacebar` Pause/Resume the game.
 * `R` or `r` Restart the game.
+
+### Time Handling Implementation
+
+*The game maintains accurate time tracking by:
+ * Starting the timer only when the game begins.
+ * Stopping the timer when the game is paused.
+ * Resuming from the correct time after unpausing.
+ * Resetting the timer properly upon game restart.
+
+### Installation & Usage
+1. Clone the repository:
+``` bash
+git clone https://learn.zone01kisumu.ke/git/krodgers/make-your-game.git
+```
+
+2. Navigate to the project directory:
+``` bash
+cd make-your-game
+```
+3. Open `tetris.html `
+
+4. Press `Go Live` (from the bottom of your screen) and go in a browser to start playing.
+
+### Technologies Used
+* HTML for rendering the game board.
+* JavaScript for game logic.
+* CSS for styling.
+
+### Future Enhancements
+* Implement different difficulty levels.
+* Add a leaderboard for high scores.
+* Introduce sound effects and animations.
+
+## Authors
+
+[Kaunda Rodgers](https://learn.zone01kisumu.ke/git/krodgers)
+
+[Vinolia Esao](https://learn.zone01kisumu.ke/git/vandisi)
