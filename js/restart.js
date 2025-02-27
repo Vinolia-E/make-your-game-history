@@ -13,6 +13,9 @@ function restart() {
         continueButton.style.display = 'block';
     }
     
+    totalPausedTime = 0;
+    pauseStartTime = 0;
+    
     init(); 
     pauseMenu.style.display = 'none'; 
 }
