@@ -17,6 +17,7 @@ function init() {
     currentPiece = createPiece();
     setupControls();
     requestAnimationFrame(update);
+    scoreResults = [];
 }
 
 // changes the drop interval, makes the change only if not in fast drop
