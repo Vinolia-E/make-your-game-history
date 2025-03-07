@@ -18,6 +18,10 @@ function init() {
     setupControls();
     requestAnimationFrame(update);
     scoreResults = [];
+
+    scoreResults = JSON.parse(localStorage.getItem('scoreResults')) || [];
+
+    updateScoreDisplay();
 }
 
 // changes the drop interval, makes the change only if not in fast drop
