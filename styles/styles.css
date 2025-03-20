@@ -5,7 +5,6 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,8 +55,12 @@ body {
 }
   
 .info-section {
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
   
 .info-label, .controls-title {
     font-size: 14px;
@@ -174,4 +177,174 @@ body {
     .block, .menu-button {
       transition: none;
     }
+}
+
+.scoreboard {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.scoreboard table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.scoreboard th,
+.scoreboard td {
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.scoreboard th {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.pagination button {
+    background: #444;
+    border: none;
+    color: white;
+    padding: 2px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+    background: #666;
+}
+
+.scoreboard-mini {
+    font-size: 12px;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    min-width: 300;
+}
+
+.scoreboard-mini table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.scoreboard-mini th,
+.scoreboard-mini td {
+    padding: 4px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scoreboard-mini th {
+    color: #888;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 10px;
+    position: sticky;
+    top: 0;
+    background: #1a1a1a;
+}
+
+/* Game Over Form Styles */
+.game-over-form {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.game-over-form h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.game-over-form p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.game-over-form label {
+    display: block;
+    color: #888;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.game-over-form input {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.game-over-form input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.game-over-form button {
+    background: #6293ca;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.game-over-form button:hover {
+    background: #4b5865;
+    transform: translateY(-2px);
+}
+
+.game-over-form button:active {
+    transform: translateY(0);
+}
+
+/* percentile banner */
+.percentile-banner {
+    background-color: #242524;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
