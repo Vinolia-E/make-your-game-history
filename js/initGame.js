@@ -9,6 +9,7 @@ function init() {
     isGameOver = false;
     lastFrameTime = 0;
     dropCounter = 0;
+    gamePausedForStory = false;
     baseDropInterval = 1000;
     dropInterval = baseDropInterval;
     lastSpeedIncreaseScore = 0;
@@ -29,6 +30,7 @@ function increaseSpeed() {
     }
     
     showSpeedNotification();
+    showStoryNotification();
 }
 
 // shows the pop-up for increased tetro speed
