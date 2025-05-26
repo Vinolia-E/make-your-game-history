@@ -16,10 +16,11 @@ function movePiece(dx, dy) {
                 let scoreValues = [100, 300, 500, 800];
                 let newPoints = scoreValues[linesCleared - 1];
                 score += newPoints;
-                
-                // Check if we've crossed a 500-point threshold
-                if (Math.floor(score / 500) > Math.floor(lastSpeedIncreaseScore / 500)) {
+
+                   // Check if we've crossed a 500-point threshold
+                   if (Math.floor(score / 500) > Math.floor(lastSpeedIncreaseScore / 500)) {
                     increaseSpeed();
+                    showStoryNotification();
                 }
                 
                 lastSpeedIncreaseScore = score;
