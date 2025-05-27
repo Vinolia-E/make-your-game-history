@@ -20,7 +20,8 @@ function movePiece(dx, dy) {
                    // Check if we've crossed a 500-point threshold
                    if (Math.floor(score / 500) > Math.floor(lastSpeedIncreaseScore / 500)) {
                     increaseSpeed();
-                    showStoryNotification();
+                    // showStoryNotification();
+                    storyTeller();
                 }
                 
                 lastSpeedIncreaseScore = score;

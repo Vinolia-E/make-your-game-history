@@ -3,7 +3,11 @@
 let totalPausedTime = 0;
 let pauseStartTime = 0;
 
+
 function togglePause() {
+    if (gamePausedForStory = true) {
+        gemePausedForStory = isPaused
+    }
     if (isGameOver) return;
     isPaused = !isPaused;
     pauseMenu.style.display = isPaused ? 'block' : 'none';

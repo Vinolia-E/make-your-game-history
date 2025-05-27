@@ -26,3 +26,4 @@ function restart() {
     init();
     pauseMenu.style.display = 'none';
 }
+
