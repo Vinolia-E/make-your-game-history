@@ -5,9 +5,7 @@ let pauseStartTime = 0;
 
 
 function togglePause() {
-    if (gamePausedForStory = true) {
-        gemePausedForStory = isPaused
-    }
+    if (gamePausedForStory) return;
     if (isGameOver) return;
     isPaused = !isPaused;
     pauseMenu.style.display = isPaused ? 'block' : 'none';

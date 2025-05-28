@@ -12,8 +12,6 @@ const story = [
     "Can you help Freddy bring bounce and giggles back to Wiggly Willow Forest? 🍓💫🎉", ""
 ];
 
-// let totalPausedTime = 0;
-// let pauseStartTime = 0;
 // shows the pop-up for story
 function showStoryNotification() {
 
@@ -35,21 +33,35 @@ function showStoryNotification() {
     }
 }
 
-// Stops the game and displays the story.
-// Shows the pause menu with the story.
+
+let storyElement = null; // Keeps track of the currently displayed story box
+
 function storyTeller() {
     gamePausedForStory = true;
     isPaused = true;
     pauseMenu.style.display = 'block';
 
-    // document.body.removeChild(storynotification);
+    // Remove the old story message if it exists
+    if (storyElement) {
+        pauseMenu.removeChild(storyElement);
+    }
+
+    // Create a new story message box
     const storynotification = document.createElement('div');
     storynotification.textContent = story[index];
     storynotification.style.marginBottom = '10px';
     storynotification.className = 'story-notification';
+
+    // Show it at the top of the pause menu
     pauseMenu.insertBefore(storynotification, pauseMenu.firstChild);
+
+    // Keep reference to remove it later
+    storyElement = storynotification;
+
+    // Move to the next part of the story
     index++;
     if (index >= story.length) {
-        index = 0; // Reset index to loop through the story
+        index = 0; // Restart the story
     }
 }
+
