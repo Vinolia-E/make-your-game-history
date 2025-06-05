@@ -13,7 +13,7 @@ const SHAPES = [
 ];
 const COLORS = ['#00f0f0', '#f0f000', '#f00000', '#00f000', '#a000f0', '#f0a000', '#0000f0'];
 
-let grid, score, lives, startTime, isPaused, lastFrameTime, dropCounter, dropInterval, baseDropInterval, currentPiece, isGameOver, gamePausedForStory;
+let grid, score, lives, startTime, isPaused, lastFrameTime, dropCounter, dropInterval, baseDropInterval, currentPiece, isGameOver;
 const container = document.getElementById('game-container');
 const scoreElement = document.getElementById('score');
 const timerElement = document.getElementById('timer');
