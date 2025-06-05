@@ -1,6 +1,7 @@
 // Attempts to move the current piece by the specified x and y offsets.
 // Handles collisions, merging, line clearing, and new piece creation.
 let lastSpeedIncreaseScore = 0;
+let lastScore = 0;
 
 function movePiece(dx, dy) {
     if (isGameOver) return; 
@@ -18,13 +19,15 @@ function movePiece(dx, dy) {
                 score += newPoints;
 
                    // Check if we've crossed a 500-point threshold
-                   if (Math.floor(score / 500) > Math.floor(lastSpeedIncreaseScore / 500)) {
+                   if (Math.floor(score / 200) > Math.floor(lastSpeedIncreaseScore / 200)) {
                     increaseSpeed();
-                    // showStoryNotification();
+                }  
+                if (Math.floor(score/500) > Math.floor(lastScore/500)) {
                     storyTeller();
                 }
                 
                 lastSpeedIncreaseScore = score;
+                lastScore = score;
             }
             currentPiece = createPiece();
             if (collide()) {
