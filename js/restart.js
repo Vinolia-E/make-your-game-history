@@ -1,6 +1,7 @@
-// Clears game over message and reinitializes the game.
-// Hides the pause menu to start a new game.
+// // Clears game over message and reinitializes the game.
+// // Hides the pause menu to start a new game.
 function restart() {
+    gamePausedForStory = false;
 
     while (pauseMenu.firstChild) {
         pauseMenu.removeChild(pauseMenu.firstChild);
@@ -23,7 +24,7 @@ function restart() {
     // Reset game state
     totalPausedTime = 0;
     pauseStartTime = 0;
+    index = 0;
     init();
     pauseMenu.style.display = 'none';
 }
-
