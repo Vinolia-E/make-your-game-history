@@ -1,7 +1,7 @@
 
-let index = 0;
+// let index = 0;
 const story = [
-    "Title: 🐸 Freddy the Frog and the Jiggly Jelly Blocks",
+    "Story time🎉🎉 Title: 🐸 Freddy the Frog and the Jiggly Jelly Blocks",
     "Deep in the heart of the Wiggly Willow Forest, there lived a happy little frog named Freddy.",
      "Freddy had one big job: to build the tallest tower in the forest using magical Jiggly Jelly Blocks!",
     "These jelly blocks weren’t just ordinary blocks — they wobbled, bounced, and giggled every time Freddy stacked them just right. But if he stacked them wrong… SPLAT! They flopped over like pancakes!",
@@ -12,12 +12,13 @@ const story = [
 ];
 
 
-let storyElement = null; // Keeps track of the currently displayed story box
+// let storyElement = null; // Keeps track of the currently displayed story box
 
 function storyTeller() {
     isPaused = !isPaused;
+    gamePausedForStory = !gamePausedForStory;
     pauseMenu.style.display = isPaused ? 'block' : 'none';
-    if (isPaused) {
+    if (isPaused || gamePausedForStory) {
         pauseStartTime = Date.now();
     } else {
         totalPausedTime += Date.now() - pauseStartTime;
@@ -44,7 +45,7 @@ function storyTeller() {
 
     // Move to the next part of the story
     index++;
-    if (index >= story.length) {
+    if (index >= story.length || restart) {
         index = 0; // Restart the story
     }
 }
