@@ -8,8 +8,10 @@ function init() {
     isPaused = false;
     isGameOver = false;
     lastFrameTime = 0;
+    index = 0;
     dropCounter = 0;
-    // gamePausedForStory = false;
+    storyElement = null;
+    gamePausedForStory = false;
     baseDropInterval = 1000;
     dropInterval = baseDropInterval;
     lastSpeedIncreaseScore = 0;
