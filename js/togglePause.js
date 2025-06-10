@@ -3,12 +3,19 @@
 let totalPausedTime = 0;
 let pauseStartTime = 0;
 
-
 function togglePause() {
     if (isGameOver) return;
+
     isPaused = !isPaused;
     pauseMenu.style.display = isPaused ? 'block' : 'none';
-    
+
+    //  If story was being displayed, remove it when continuing
+    if (!isPaused && storyElement) {
+        pauseMenu.removeChild(storyElement);
+        storyElement = null;
+        gamePausedForStory = false;
+    }
+
     if (isPaused) {
         pauseStartTime = Date.now();
     } else {
