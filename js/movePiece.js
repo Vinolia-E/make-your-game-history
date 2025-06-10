@@ -24,6 +24,7 @@ function movePiece(dx, dy) {
                 }  
                 if (Math.floor(score/500) > Math.floor(lastScore/500)) {
                     storyTeller();
+                    gamePausedForStory = true;
                 }
                 
                 lastSpeedIncreaseScore = score;
