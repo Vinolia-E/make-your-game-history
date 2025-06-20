@@ -25,6 +25,10 @@ function movePiece(dx, dy) {
                 if (Math.floor(score/500) > Math.floor(lastScore/500)) {
                     storyTeller();
                     gamePausedForStory = true;
+                    index++; // Move to the next part of the story
+                    if (index >= story.length || restart) {
+                        index = 0; // Restart the story
+                    }
                 }
                 
                 lastSpeedIncreaseScore = score;
